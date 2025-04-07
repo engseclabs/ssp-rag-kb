@@ -1,6 +1,6 @@
 # SSP RAG Knowledge Base
 
-Example Terraform configuration for building a FedRAMP-compliant SSP editor using AWS Bedrock. Part of the [FedRAMP Labs](https://fedramplabs.com) project to demonstrate compliant AI implementations.
+Example Terraform configuration for building a FedRAMP-compliant SSP editor using AWS Bedrock. Part of the [EngSec Labs](https://engseclabs.com) project to demonstrate compliant AI implementations.
 
 ## What is this?
 
@@ -35,4 +35,4 @@ All data stays within your AWS environment. The AI processing happens through AW
 
 ## More Information
 
-Read the full blog post at [link] or visit [FedRAMP Labs](https://fedramplabs.com) for more examples of FedRAMP-compliant cloud implementations.
+Read the full blog post at [link] or visit [EngSec Labs](https://engseclabs.com) for more examples of FedRAMP-compliant cloud implementations.

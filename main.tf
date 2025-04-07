@@ -23,7 +23,7 @@ resource "aws_db_subnet_group" "ssp_rag_kb" {
 resource "aws_security_group" "ssp_rag_kb" {
   name        = "ssp-rag-kb-aurora"
   description = "Security group for Aurora Serverless v2 Knowledge Base"
-  vpc_id      = "vpc-c0f9c3a4"
+  vpc_id      = var.vpc_id
 
   ingress {
     from_port       = 5432
@@ -43,7 +43,7 @@ resource "aws_security_group" "ssp_rag_kb" {
 resource "aws_security_group" "bedrock" {
   name        = "ssp-rag-kb-bedrock"
   description = "Security group for Bedrock service"
-  vpc_id      = "vpc-c0f9c3a4"
+  vpc_id      = var.vpc_id
 }
 
 resource "aws_rds_cluster_parameter_group" "ssp_rag_kb" {
@@ -63,7 +63,7 @@ resource "aws_rds_cluster" "ssp_rag_kb" {
   engine_version                 = "15.4"
   database_name                  = "ssp_rag_kb"
   master_username                = "postgres"
-  master_password                = "bad-password-please-rotate"
+  master_password                = var.db_password
   db_subnet_group_name           = aws_db_subnet_group.ssp_rag_kb.name
   skip_final_snapshot           = true
   vpc_security_group_ids         = [aws_security_group.ssp_rag_kb.id]
@@ -97,7 +97,7 @@ resource "aws_rds_cluster_instance" "ssp_rag_kb" {
 }
 
 resource "aws_s3_bucket" "ssp_rag_kb" {
-  bucket        = "ssp-rag-kb-dataset"
+  bucket        = var.s3_bucket_name
   force_destroy = true
 }
 

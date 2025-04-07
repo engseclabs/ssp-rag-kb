@@ -13,3 +13,9 @@ variable "db_password" {
   type        = string
   sensitive   = true
 }
+
+variable "s3_bucket_name" {
+  description = "Name of the S3 bucket for SSP documents"
+  type        = string
+  default     = "ssp-rag-kb-dataset"
+}
