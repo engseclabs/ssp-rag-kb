@@ -1,0 +1,4 @@
+vpc_id        = "vpc-xxxxxxxx"
+subnet_ids    = ["subnet-xxxxxxxx", "subnet-yyyyyyyy"]
+db_password   = "your-secure-password-here"
+s3_bucket_name = "your-ssp-docs-bucket-name"
